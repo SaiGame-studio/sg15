@@ -10,6 +10,15 @@ public class SpaceCtrl : SaiMonoBehaviour
     [SerializeField] protected SpaceCtrl nextSpace;
     [SerializeField] protected Transform lastSpacePosition;
     [SerializeField] protected Transform nextSpacePosition;
+    
+    [SerializeField] protected Transform room;
+    public Transform Room => room;
+
+    [SerializeField] protected Transform gym;
+    public Transform Gym => gym;
+
+    [SerializeField] protected Transform doors;
+    public Transform Doors => doors;
 
     protected override void LoadComponents()
     {
@@ -18,6 +27,16 @@ public class SpaceCtrl : SaiMonoBehaviour
         this.LoadYearId();
         this.LoadNextSpaces();
         this.LoadSpacePositions();
+        this.LoadTransform();
+    }
+
+    protected virtual void LoadTransform()
+    {
+        if (this.room != null) return;
+        this.room = transform.Find("room");
+        this.gym = this.room.Find("Gymnasium");
+        this.doors = this.gym.Find("Doors");
+        Debug.LogWarning(transform.name + ": LoadTransform", gameObject);
     }
 
     protected virtual void LoadSpacesCtrl()
@@ -30,8 +49,8 @@ public class SpaceCtrl : SaiMonoBehaviour
     protected virtual void LoadSpacePositions()
     {
         if (this.nextSpacePosition != null && this.lastSpacePosition != null) return;
-        this.nextSpacePosition = transform.Find("nextSpaces").Find("nextSpacePosition");
-        this.lastSpacePosition = transform.Find("nextSpaces").Find("lastSpacePosition");
+        this.nextSpacePosition = transform.Find("nextSpacePositions").Find("nextSpacePosition");
+        this.lastSpacePosition = transform.Find("nextSpacePositions").Find("lastSpacePosition");
         Debug.LogWarning(transform.name + ": LoadSpacePositions", gameObject);
     }
 

@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class SpaceTriggerNext : SpaceTrigger
+public abstract class SpaceTriggerNext : SpaceTrigger
 {
     protected override void ResetValue()
     {
         base.ResetValue();
-        transform.localPosition = new Vector3(20, 1.5f, -15);
+        this.ResetPosition();
     }
 
-    protected override void ShowSpace()
+    protected abstract void ResetPosition();
+
+    protected override bool IsSpaceLoadFinish()
     {
-        Debug.LogWarning("SpaceTriggerNext");
+        //TODO: make sure space finish loading before turn true
         this.spaceCtrl.Show();
+        return true;
     }
 }
