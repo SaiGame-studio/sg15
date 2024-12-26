@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110381592147089847}
   - component: {fileID: 5408040596241201273}
+  - component: {fileID: 5008327874982839082}
   m_Layer: 0
   m_Name: SpaceTriggerLast_1
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 784062493326263079}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 1.5, z: 13.5}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalPosition: {x: 53, y: 1, z: 20}
+  m_LocalScale: {x: 10, y: 4, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5201115392910559306}
@@ -51,8 +52,23 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 3, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5008327874982839082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784062493326263079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a470300fc8242fd4f91deb26a67765e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceCtrl: {fileID: 0}
+  boxCollider: {fileID: 5408040596241201273}
+  door: {fileID: 0}
 --- !u!1 &1075368830255380236
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,8 +96,8 @@ Transform:
   m_GameObject: {fileID: 1075368830255380236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 1.5, z: -15}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalPosition: {x: 53, y: 1, z: -20}
+  m_LocalScale: {x: 10, y: 4, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5201115392910559306}
@@ -105,7 +121,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 3, z: 4}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2400578911387146258
 MonoBehaviour:
@@ -151,8 +167,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8758349875557416429}
   - {fileID: 1110381592147089847}
+  - {fileID: 8758349875557416429}
   - {fileID: 4747437833197160143}
   - {fileID: 842644801808628443}
   m_Father: {fileID: 0}
@@ -167,8 +183,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8758349875557416429}
   - component: {fileID: 3097411115668067130}
+  - component: {fileID: 6700226922953097328}
   m_Layer: 0
-  m_Name: SpaceTriggerLast_0
+  m_Name: SpaceTriggerLast_2
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -183,8 +200,8 @@ Transform:
   m_GameObject: {fileID: 8381267906277305145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 1.5, z: 13.5}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalPosition: {x: 5.3, y: 1, z: 20}
+  m_LocalScale: {x: 10, y: 4, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5201115392910559306}
@@ -208,8 +225,23 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 3, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6700226922953097328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381267906277305145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e152c12a95e7943b98fb9a1ced29ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceCtrl: {fileID: 0}
+  boxCollider: {fileID: 3097411115668067130}
+  door: {fileID: 0}
 --- !u!1 &8589513745892785377
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,8 +269,8 @@ Transform:
   m_GameObject: {fileID: 8589513745892785377}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 1.5, z: -15}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalPosition: {x: 5.3, y: 1, z: -20}
+  m_LocalScale: {x: 10, y: 4, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5201115392910559306}
@@ -262,7 +294,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 3, z: 4}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5877909796885897276
 MonoBehaviour:

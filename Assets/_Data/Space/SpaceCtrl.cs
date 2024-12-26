@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpaceCtrl : SaiMonoBehaviour
 {
     [SerializeField] protected SpacesCtrl spacesCtrl;
+    [SerializeField] protected float spacePadding = -49;
     [SerializeField] protected int spaceId = -1;
     [SerializeField] protected int lastSpaceId = -1;
     [SerializeField] protected int nextSpaceId = -1;
@@ -24,7 +25,7 @@ public class SpaceCtrl : SaiMonoBehaviour
     {
         base.LoadComponents();
         this.LoadSpacesCtrl();
-        this.LoadYearId();
+        this.LoadSpaceId();
         this.LoadNextSpaces();
         this.LoadSpacePositions();
         this.LoadTransform();
@@ -36,6 +37,7 @@ public class SpaceCtrl : SaiMonoBehaviour
         this.room = transform.Find("room");
         this.gym = this.room.Find("Gymnasium");
         this.doors = this.gym.Find("Doors");
+
         Debug.LogWarning(transform.name + ": LoadTransform", gameObject);
     }
 
@@ -67,7 +69,7 @@ public class SpaceCtrl : SaiMonoBehaviour
         Debug.LogWarning(transform.name + ": LoadNextSpaces", gameObject);
     }
 
-    protected virtual void LoadYearId()
+    protected virtual void LoadSpaceId()
     {
         if (this.spaceId > -1) return;
         this.spaceId = int.Parse(this.Name().Replace("Space_", ""));
@@ -75,7 +77,10 @@ public class SpaceCtrl : SaiMonoBehaviour
         this.lastSpaceId = this.spaceId - 1;
         if (this.nextSpaceId >= this.spacesCtrl.Manager.Spaces.Count-1) this.nextSpaceId = 0;
         if (this.lastSpaceId < 0) this.lastSpaceId = this.spacesCtrl.Manager.Spaces.Count - 1;
-        Debug.LogWarning(transform.name + ": LoadYearId", gameObject);
+
+        transform.position = new Vector3(0, 0, this.spacePadding * this.spaceId);
+
+        Debug.LogWarning(transform.name + ": LoadSpaceId", gameObject);
     }
 
     public virtual void Show()
