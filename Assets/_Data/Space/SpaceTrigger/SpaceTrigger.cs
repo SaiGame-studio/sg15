@@ -41,7 +41,7 @@ public abstract class SpaceTrigger : SaiMonoBehaviour
         if (this.boxCollider != null) return;
         this.boxCollider = GetComponent<BoxCollider>();
         this.boxCollider.isTrigger = true;
-        this.boxCollider.size = new Vector3(4, 3, 3.5f);
+        transform.localScale = new Vector3(10f, 4f, 10f);
         Debug.LogWarning(transform.name + ": LoadTriggerCollider", gameObject);
     }
 
